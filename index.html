@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inktober 2023</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- Option 1: Include in HTML -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- bắt đầu phần Navbar -->
+    <!-- navbar-expand-lg có thể thay bằng navbar-expand-sm 
+    khác nhau là độ co kéo khi đạt tới mức độ nhất định 
+  tức là ở những kích cỡ màn hình khác nhau sẽ ẩn phần navbar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+      <!-- Container với div tạo căn lề trên navbar -->
+      <div class="container">
+        <!-- Các class cho navbar đều bắt đầu với navbar hoặc nav 
+        đi sau là dạng triển khai -->
+        <a href="#" class="navbar-brand"
+          >Learning to Read, then Reading to Learn</a
+        >
+        <!-- tạo một button dạng hambuger, nút này sẽ gói các phần tử
+        trong nav lại khi kích cỡ màn hình dưới mức đã cài đặt -->
+        <!-- data-bs-toggle để chỉ dạng hiển thị khi đã chuyển về nút menu
+        cụ thể ở đây sẽ showlist của nav -->
+        <!-- data-bs-target dùng chỉ định #navmenu 
+          dùng để áp dụng class navbar-toogle cho các cấu phần
+        trong div collapse phía dưới -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <!-- navbar-toggler-icon là icon hambuger -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <!-- navbar-nav và nav-item, nav-link như những cái hộp định sẵn
+          để chứa các phần tử với margin và padding cố định -->
+          <!-- ms-auto dùng đẩy menu sang bên phải -->
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#WhatYouWillLearn" class="nav-link">What You'll learn</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://saturnzen.github.io/LambdaInformationColonData/" class="nav-link">LambdaInformationColonData</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://saturnzen.github.io/TokenColonBooks/" class="nav-link">TokenColonBooks</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Kết thúc phần nav-bar -->
+
+    <!-- bắt đầu phần showcase -->
+    <!-- bg-dark: màu nền màu đen
+          text-light: chữ màu trắng
+          p-5: padding tất cả các hướng, có thể dùng pt cho padding top, pb là padding bottom
+        px là padding theo trục hoành, số phía sau là khoảng cách (chưa biết theo đơn vị gì)
+          thêm p-lg-0 sẽ bỏ padding ở màn hình lớn (khoảng cách giữa hình ảnh với dưới cùng)
+          pt-lg-5: tạo khoảng cách giữa đầu cô gái với thanh điều hướng (navbar)
+        -->
+    <!-- THấy rõ rệt sự khác biệt của container khi thay đổi pb pt hay px py -->
+    <!-- text-center căn chữ ở giữa, 
+      text-sm-start giúp đưa chữ về bên trái ở các màn hình lớn -->
+    <section
+      class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
+      style="background-color: #e99460"
+    >
+      <div class="container">
+        <!-- https://getbootstrap.com/docs/5.3/utilities/flex/#enable-flex-behaviors -->
+        <!-- d-flex sắp xếp các phần bên cạnh nhau theo hàng ngang 
+        d-sm-flex sẽ set để d-flex chỉ áp dụng cho màn hình lớn hơn cỡ sm-->
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div>
+            <h1>Một cái gì đó <span class="text-warning"> dễ hiểu hơn</span></h1>
+            <!-- lead đẩy kích thước của text lên
+            my-4 dùng tạo một ít margin theo hướng dọc (trục tung) -->
+            <p class="lead my-4">
+              Tháng 10 thường niên của mọi năm,  
+              tất cả các họa sĩ, 
+              những người thích vẽ trên khắp mọi nơi trên thế giới 
+              sẽ tham gia vào một thử thách mang tên là “Inktober” 
+              bằng cách mỗi người sẽ vẽ một bức tranh được line mực vào mỗi ngày.
+            </p>
+            <p class="h6">Inktober được  Jake Parker  sáng tạo ra vào năm 2009
+             như một thử thách để mọi người có thể cải thiện khả năng 
+             cũng như tính sáng tạo của bản thân với 
+             một thói quen vẽ hằng ngày và bổ ích</p>
+            <p class=" text-success" >
+              vẽ trên không trung thay vì trên tranh.
+            </p>
+            <button
+              class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#enroll"
+            >
+              Start the Enrollment
+            </button>
+          </div>
+          <!-- img-fluid để đẩy hình ảnh nằm trong container 
+          w-50 để size hình ảnh còn 50%
+        d-none để ẩn ảnh đi
+      d-sm-block để chỉ ẩn ảnh trên màn hình nhỏ-->
+          <img
+            class="img-fluid w-50 d-none d-sm-block"
+            src="img/undraw_conference_re_2yld.svg"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </section>
+    <!-- kết thúc phần showcase -->
+
+    <!-- bắt đầu phần Newsletter -->
+    <section class="bg-primary text-light p-5">
+      <div class="container">
+        <div class="d-md-flex justify-content-between align-items-center">
+          <h3 class="mb-3 mb-md-0">Sign up for Our Newsletter</h3>
+
+          <!-- https://getbootstrap.com/docs/5.3/forms/input-group/ -->
+          <div class="input-group news-input">
+            <input type="text" class="form-control" placeholder="Enter Email" />
+            <button
+              class="btn btn-dark btn-lg"
+              type="button"
+              id="button-addon2"
+            >
+              Button
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- kết thúc phần newsletter -->
+
+    <!-- Bắt đầu phần boxes -->
+    <section class="p-5" id="WhatYouWillLearn">
+      <div class="container">
+        <!-- g-4 để tạo khoảng cách giữa các cột hoặc hàng -->
+        <div class="row text-center g-4">
+          <div class="col-md">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-center">
+                <!-- sử dụng class h1 trong bootstrap mô phỏng các phẩn tử dạng h1
+                tức là làm nó lớn lên -->
+                <div class="h1 mb-3">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <h3 class="card-title mb-3">Sparkle</h3>
+                <p class="card-text">
+                  <blockquote>Bạn còn nhớ cách mô tả của tôi về khổ và đau không?</blockquote>
+                  <blockquote>Bạn có biết thí nghiệm về sủi bọt lại của lon bia khi được rắc thêm tí muối?
+                    Đó là do cạnh tranh dung môi, muối làm cho bọt khí bị mất đi lượng dung môi dùng hoà tan mình, nên thoát ra.
+                    </blockquote>
+                  <blockquote>Vui cười cũng vậy, thêm tí muối thì bớt khổ đau.</blockquote>
+                  <blockquote>Tuy nhiên, cũng có thí nghiệm, hoà tan đường vào cốc muối bão hoà mà không làm muối kết tinh.
+                    Pha nước ngọt vào rượu bia cũng kiểu kiểu vậy.
+                  </blockquote>
+                  <blockquote>Toả sáng hay niềm vui là kiểu ngọt giảm mặn, mặn giảm đắng.</blockquote>
+                  
+                  
+                  </p>
+                <a
+                  href="#learn"
+                  class="btn btn-primary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-center">
+                <!-- sử dụng class h1 trong bootstrap mô phỏng các phẩn tử dạng h1
+              tức là làm nó lớn lên -->
+                <div class="h1 mb-3">
+                  <i class="bi bi-people"></i>
+                </div>
+                <h3 class="card-title mb-3">Plump</h3>
+                <p class="card-text"><figure><blockquote class="blockquote">
+                  
+                  <p><code >
+                  SELECT
+                    <p>iNcentive,
+                      saddle,
+                      count(*)</p>
+                  
+                  </code>
+                    <p><code >FROM
+                      <p>plumpFor</p></code></p>
+                      <code >GROUP BY
+                        <p>iNcentive,
+                          saddle</p></code>
+                </p></p>
+                <a
+                  href="https://www.facebook.com/TokenColonBooks/events"
+                  class="btn btn-primary"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card bg-dark text-light">
+              <div class="card-body text-center">
+                <!-- sử dụng class h1 trong bootstrap mô phỏng các phẩn tử dạng h1
+              tức là làm nó lớn lên -->
+                <div class="h1 mb-3">
+                  <i class="bi bi-person-square"></i>
+                </div>
+                <h3 class="card-title mb-3">Saddle</h3>
+                <p class="card-text"><figure><blockquote class="blockquote">
+                  <p>
+                    <code>SELECT
+                      <p>iNcentive,
+                        default,
+                        count(*)</p>
+                    </code>
+                    <code>FROM
+                        <p>saddle</p>
+                      </code>
+                      <code>GROUP BY
+                          <p>iNcentive,
+                            default</p>
+                      </code>
+                    </p>
+                <a href="#" class="btn btn-primary">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kết thúc phần Boxes -->
+    <!-- Bắt đầu phần Learn -->
+    <section id="learn" class="p-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md">
+            <img
+              src="img/undraw_road_to_knowledge_m8s0.svg"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+          <div class="col-md p-5">
+            <h2>Nausea 76</h2>
+            <p class="lead">
+              <p>Bữa đi Bard, hỏi đứa bạn “câu trả lời của cậu, thì câu hỏi của ai?”</p>
+<p>Chuyện là có một câu hỏi làm thay đổi nhận thức đối xứng của tôi “đối diện với mỏng manh #fragile là gì?”
+Đối với không thoải mái, tôi có cái nhìn khác chút, là nỗi đau.</p><p> Thằng bạn bên #Sparkle nói gì đó về nausea 73 xong thách tôi viết thêm về cảm giác ngọt ngào lúc mới yêu.</p>
+ <p>Khác với kiểu  ăn dưa hấu xong thì thấy mận ít ngọt hơn, chấm muối thì thấy ngọt ngay hay chấm muối ớt thấy khác lắm, thì chua cay nó hơi hơi khác. 
+Tại tôi bảo, cay là cảm giác đau, thế là nó tuôn một tràng “biết quả thần kỳ không?”.</p> 
+<p>Có hai thứ mà tôi thấy người ta hay dùng để thử: ớt và khổ qua. Ớt thì đơn giản, không đau thì ta thấy ngọt. Còn khổ qua thì chắc là lấp vị giác thật, vì nhiều người vẫn thấy ngọt khi ăn.</p>
+<p>Tóm lại, đây là cách chứng minh khác với anh bạn tôi về mấy chủ đề sau:
+<ul><li>Khổ gần với đau.</li>
+<li>Chúng khiến ta khó thấy ngọt ngào ẩn sau.</li>
+<li>Thúc đẩy ta đi  tìm thoải mái và tránh khó chịu: sự tưởng thưởng của não.</li></ul>
+</p>
+Thực ra nói dài nói dai cũng là nói lại của “framing effect” dễ chịu và khó chịu trong một chiếc ly. Mở rộng vấn đề thực sự, hay lý do của sự chối bỏ cũng là một cái effect của nausea 75. Để bữa nào nói về cuốn sách mới của một người bạn. 
+<p>Nhưng, cũ cũng phải có cái kết để mở ra vấn đề mới:
+<ul><li>
+  Magiculin có tác dụng ở mút thần kinh khác ngoài miệng không?</li>
+<li>Không nhớ là ngoài lưỡi thì chỗ khác có thấy đắng không?</li></ul> 
+</p>
+Tự dưng nhớ tới cái tản mạn nọ, nên bạn tôi  hỏi câu “vậy ứng dụng gì trong nha khoa không? Đau răng, đau lợi với nhiệt miệng quá nè” rồi đứa kế bên nhào vô “vậy còn vấn đề lở loét niêm mạc miệng gây khó khăn trong ăn uống của bệnh nhân ung thư?”.
+            </p>
+            
+            <a
+              href="https://www.facebook.com/TokenColonBooks/posts/pfbid0VuQHA8vw6frd7Vu4VjsJLV8Evfxo1JWhzRu82torFo6qdsCRHujD8z3G3npYr2k3l?__cft__[0]=AZXji93mjj_f46K_-enr_EDoXEJEetZ52G26YU5oM3axX2w6rlx_V0KMJFiNO8wMXxJMNRDcO8mdV0V4xVAASk9d1erjSxpGz99CoEaAHZ-AMsWNVS99Rfme8rhpYQ2o8uQIstfRBEKW3-oCE2MhNeCpnGj9OvDz0HJenNuvkGt7Jw&__tn__=%2CO%2CP-R"
+              class="btn btn-light mt-3"
+            >
+              <i class="bi bi-chevron-right">Read more</i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="read" class="p-5 bg-dark text-light d-none">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md p-5">
+            <h2>Reading to Learn</h2>
+            <p class="lead">
+              Ban nghĩ gì khi đọc xong một cuốn sách? Có khi nào bạn cảm thấy
+              muốn chia sẻ cái sự hay ho mới đọc được này? Nhưng lại chẳng biết
+              phải nói với ai? Liệu răng nó có quá cũ kỹ? Hay liệu nó quá giáo
+              điều nên không bao giờ được áp dụng? Một tác giả khác có thể đã
+              bàn về chủ đề này. Tác giả này đã nghĩ thế này khi đọc cái này.
+              Tác giả kia có suy nghĩ giống giống nhưng có một số thứ hay ho khi
+              đọc thứ này thứ kia. Đó là cách các bài viết kết nối các cuốn sách
+              ở đây.
+            </p>
+            <p>
+              Tất nhiên, có những ý kiến thực sự lỗi thời hay cần cập nhập. "Nếu
+              bạn không bỏ đi một thứ mình từng tâm đắc trong năm nay, thì bạn
+              chưa tiến bộ" _Charlie Munger. Kiểm chứng các ý tưởng được chúng
+              tôi lan truyền là ý tưởng chính hiện tại.
+            </p>
+            <a
+              href="https://saturnzen.github.io/LambdaInformationColonData
+            "
+              class="btn btn-light mt-3"
+            >
+              <i class="bi bi-chevron-right">Read more</i>
+            </a>
+          </div>
+          <div class="col-md">
+            <img
+              src="img/undraw_reading_time_re_phf7.svg"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUestion ACcordion -->
+    <section id="questions" class="p-5 d-none">
+      <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        
+
+        <div class="accordion accordion-flush" id="questions">
+          <!-- Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-one"
+              >
+                Where exactly are you located?
+                <span class="fw-lighter  "> (chính xác thì những thứ này để làm gì?)</span>
+                
+              </button>
+            </h2>
+            <div
+              id="question-one"
+              class="accordion-collapse collapse"
+              data-bs-parent="questions"
+            >
+              <div class="accordion-body">
+                Hy vọng một số kiến thức sẽ là hành trang cho bạn.
+                hy vọng rằng một số sẽ không bao giờ cần dùng đến.
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-two"
+              >
+                
+              How much does it cost to attend?
+              <span class="fw-lighter  "> (Like hay follow thì có được gì không?)</span>
+              </button>
+            </h2>
+            <div
+              id="question-two"
+              class="accordion-collapse collapse"
+              data-bs-parent="questions"
+            >
+              <div class="accordion-body">
+                Free. 
+                Toàn bộ dự án #VST sau gọi vốn trên một số nền tảng 
+                và trang web, 
+                nay đã hoàn toàn miễn phí ngay trên fanpage. 
+                Bạn có thể inbox fanpage để khiến nó chỉ
+                 thuộc về mình bạn (hoặc khiến nó biến mất mãi mãi)
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-three"
+              >
+              <span class="fw-lighter  ">Làm cái này để làm gì? Có ai đọc không? Có ra tiền không?</span>
+              
+                
+              </button>
+            </h2>
+            <div
+              id="question-three"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Một sự thỏa mãn cá nhân. 
+                Như tiêu chí học đi đôi với hành.
+                Như mô tả <a href="#WhatYouWillLearn">ở trên,</a> bạn có thể 
+                viết chẳng vì cái gì cả. Chỉ đơn giản là thôi thúc muốn viết.
+                Và luyện tập thì quan trọng.
+                
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-four"
+              >
+              <span class="fw-lighter  ">
+                Tại sao tôi nên like hay follow fanpage này?</span>
+              
+              </button>
+            </h2>
+            <div
+              id="question-four"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Như đã nói, với cách trình bày này (kém xa nhiều trang chia sẻ kiến thức 
+                và sách khác), nếu là tôi thì cũng còn lâu tôi mới quan tâm. Bạn có thể nhìn vào số like và follow, 
+                cũng như việc các quản trị viên không còn muốn chạy quảng cáo, để thấy rằng nếu bạn thấy thứ này có ích, thì rất ít người biết về chúng ngoài bạn.
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc một item 4-->
+
+          <!-- Item 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-five"
+              >
+                Do you help me find a job?
+                <span class="fw-lighter  ">
+                    (Đọc sách nhiều có giàu không? Biết mấy cái này có giàu không?)</span>
+                
+              </button>
+            </h2>
+            <div
+              id="question-five"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Như đã đề cập, bạn không biêt cũng được. Chẳng có cộng đồng
+                để bạn thảo luận về bài đăng mới nhất (ví dụ như bạn sẽ tìm ở đâu 
+                người để thảo luận về cuốn sách mới nhất của Michael Sandel đã được
+                mua và dịch bởi Omega+). Nếu bạn thấy được trang này thông qua đề xuất 
+                của facebook hoặc khi tìm kiếm trên google, rất có thể quản trị viên đã đủ giàu để 
+                chạy quảng cáo
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc một item 5-->
+
+          <!-- Item 6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#question-six"
+              >
+                What is this feeling?
+                <span class="fw-lighter  ">
+                    (Cảm giác khó chịu này là gì? Bạn có thấy khó chịu trước, trong và sau khi viết giống tôi không?)</span>
+                
+              </button>
+            </h2>
+            <div
+              id="question-six"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Trước và trong khi viết, có một số thứ thôi thúc bạn như 
+                *Vomit Science Time* hay không? Bạn có thể thấy kiệt sức khi hoàn thành nó? Một cảm giác tôi thường trải qua là 
+                <span class="text-warning">nhận ra</span>  mình không hoàn hảo, không tài giỏi, chưa có gì thay đổi". Tệ nhất là "hóa ra thứ này không xịn xò như mình tưởng". 
+                Sẽ đến lúc bạn nhận ra rằng nếu không viết ra thì bạn còn chẳng có cơ hội <span class="text-warning">nhận ra</span> điều đó.
+              </div>
+            </div>
+          </div>
+          <!-- kết thúc một item 6-->
+        </div>
+      </div>
+    </section>
+
+    <!-- kết thúc Question Accordion -->
+
+    <!-- Instructors -->
+    <section id="instructors" class="p-5 bg-primary d-none">
+      <div class="container">
+        <h2 class="text-center text-white">Our Instructors</h2>
+        <p class="lead text-center text-white mb-5">
+          Our instructors all have 5+ years working as a specialist in their
+          industry
+        </p>
+        <div class="row g-4">
+          <!-- col-md-6 cho 6 cột, col-lg-3 cho 4 cột -->
+          <!-- cột 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="img/Nguyen-Bui.jpg"
+                  class="rounded-circle mb-3 w-50"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Bùi Trung Nguyên</h3>
+                <p class="card-text">
+                  <ul class="list-group list-group-flush head">
+                    <li class="list-group-item">Dược sĩ</li>
+                    <li class="list-group-item">Kiểm nghiệm viên hóa lý</li>
+                    <li class="list-group-item">Người đọc sách không chuyên</li>
+                    <li class="list-group-item">Đang
+                      trên con đường trở thành một Fullstack developer</li>
+                  </ul>
+                   
+                </p>
+                <a href="https://twitter.com/Saturnzen2811/"
+                  ><i class="bi bi-twitter text-dark mx-1"></i
+                ></a>
+                <a href="https://www.facebook.com/Saturnzen2811/"
+                  ><i class="bi bi-facebook text-dark mx-1"></i
+                ></a>
+                <a href="https://www.linkedin.com/in/nguyên-bùi-27b0b9145/"
+                  ><i class="bi bi-linkedin text-dark mx-1"></i
+                ></a>
+                <a href="https://www.instagram.com/zensaturn/"
+                  ><i class="bi bi-instagram text-dark mx-1"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- hết cột 1 -->
+          <!-- cột 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/11.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">John Doe</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Cumque, blanditiis dolore? Nostrum, ratione, pariatur adipisci
+                  debitis consectetur numquam accusamus ducimus nesciunt facere
+                  asperiores, ad sequi et id! Nesciunt, quaerat quisquam!
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- hết cột 2 -->
+          <!-- cột 3t -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/12.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Steve Smith</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Cumque, blanditiis dolore? Nostrum, ratione, pariatur adipisci
+                  debitis consectetur numquam accusamus ducimus nesciunt facere
+                  asperiores, ad sequi et id! Nesciunt, quaerat quisquam!
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- hết cột 3 -->
+          <!-- cột thứ 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/11.jpg"
+                  class="rounded-circle mb-3"
+                  alt=""
+                />
+                <h3 class="card-title mb-3">Sara Smith</h3>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Cumque, blanditiis dolore? Nostrum, ratione, pariatur adipisci
+                  debitis consectetur numquam accusamus ducimus nesciunt facere
+                  asperiores, ad sequi et id! Nesciunt, quaerat quisquam!
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- hết cột 4 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact and map -->
+    <section class="p-5 d-none">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center mb-4">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item">
+                <span class="fw-bold">Main location: </span>
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Enrollment Phone: </span>
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Student phone: </span>
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold">Student Email: </span>nguyenbtfx22015@funix.edu.vn
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kết thúc contact và map -->
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy;2021 Frontend Bootcamp</p>
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+      </div>
+    </footer>
+    <!-- modal -->
+    <div
+      class="modal fade"
+      id="enroll"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enroll">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Fill out this form and we will get back to you</p>
+            <form action="">
+              <div class="mb-3">
+                <label for="first-name" class="col-form-label">
+                  First Name:
+                </label>
+                <input type="text" class="form-control" id="first-name" />
+              </div>
+              <div class="mb-3">
+                <label for="last-name" class="col-form-label">
+                  Last Name:
+                </label>
+                <input type="text" class="form-control" id="last-name" />
+              </div>
+              <div class="mb-3">
+                <label for="Phone-number" class="col-form-label">
+                  Phone number:
+                </label>
+                <input type="text" class="form-control" id="Phone-number" />
+              </div>
+              <div class="mb-3">
+                <label for="Email" class="col-form-label"> Email: </label>
+                <input type="text" class="form-control" id="Email" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1Ijoic2F0dXJuemVuMjgxMSIsImEiOiJjbGw5MTlsbnYxZXkwM2VvMTM3aWdxcTMxIn0.3GT63SnGMRjqXT3l3x-hfw";
+      var map = new mapboxgl.Map({
+        container: "map",
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-71.060982, 42.35725],
+        zoom: 18,
+      });
+    </script>
+  </body>
+</html>
